@@ -9,6 +9,7 @@ function App() {
     { id: 'e2', title:'New TV', amount:94.12,date: new Date(2020, 7, 15) },
     { id: 'e3', title:'Talk Show', amount:94.12, date: new Date(2020, 9, 2)},
   ]
+  aaaaa
   return (
     <div className="App">
       <FakeCardData>
