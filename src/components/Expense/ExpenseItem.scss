@@ -16,27 +16,6 @@ $screen-xxl:                                        1600px;
 //     padding: 100px 100px;
 // }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: white;
-    margin-left: var(--spacing);
-    width: calc(calc(100% / var(--colunms)) - var(--spacing));
-    margin-bottom: var(--spacing);
-    ::before{
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: 7px;
-        right: 7px;
-        bottom: -15px;
-        z-index: -1;
-        background: #F0F3F6;
-    }
-}
-
 .card-image{
     height: 200px;
     width: 100%;

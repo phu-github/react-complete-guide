@@ -1,0 +1,22 @@
+.card-expense{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    margin-left: var(--spacing);
+    width: calc(calc(100% / var(--colunms)) - var(--spacing));
+    margin-bottom: var(--spacing);
+}
+.card-expense--background{
+    ::before{
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 7px;
+        right: 7px;
+        bottom: -15px;
+        z-index: -1;
+        background: #F0F3F6;
+    }
+}
