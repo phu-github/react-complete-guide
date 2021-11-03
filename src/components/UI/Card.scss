@@ -7,16 +7,8 @@
     margin-left: var(--spacing);
     width: calc(calc(100% / var(--colunms)) - var(--spacing));
     margin-bottom: var(--spacing);
+    -webkit-box-shadow:-3px 10px 33px 4px rgba(62,66,66,0.18);
+    -moz-box-shadow: -3px 10px 33px 4px rgba(62,66,66,0.18);
+    box-shadow: -3px 10px 33px 4px rgba(62,66,66,0.18);
 }
-.card-expense--background{
-    ::before{
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: 7px;
-        right: 7px;
-        bottom: -15px;
-        z-index: -1;
-        background: #F0F3F6;
-    }
-}
+
