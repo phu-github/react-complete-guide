@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import { useState } from 'react/cjs/react.development';
 
 const ExpenseForm = (props) => {
+    console.log("[1.1] NewExpense.js run");
     const style = { background: '#0092ff', padding: '8px 0' };
     const [enterTitle, setEnterTitle] = useState('');
     const [enterAmount, setEnterAmount] = useState('');
@@ -51,6 +52,17 @@ const ExpenseForm = (props) => {
     }
     const handleExpenseSubmit = (e) =>{
         e.preventDefault();
+        const expenseData = {
+            title: enterTitle,
+            amount: enterAmount,
+            date: new Date(enterDate)
+        }
+        props.onRecieveExpenseData(expenseData);
+        // cleat input sau khi nhấn submit
+        setEnterAmount('');
+        setEnterDate('');
+        setEnterTitle('');
+        console.log(expenseData);
     }
     return(
         <div className="expense-input">
@@ -60,15 +72,15 @@ const ExpenseForm = (props) => {
                     <div className="new-expense__controls">
                         <div className="new-expense__control">
                             <label className="new-expense__control__title">Title</label>
-                            <input type="text" onChange={handleTitleChange}></input>
+                            <input type="text" value={enterTitle} onChange={handleTitleChange}></input>
                         </div>
                         <div className="new-expense__control">
                             <label className="new-expense__control__title">Amount</label>
-                            <input type="number" min="0.01" step="0.01" onChange={handleAmountChange}></input>
+                            <input type="number" value={enterAmount} min="0.01" step="0.01" onChange={handleAmountChange}></input>
                         </div>
                         <div className="new-expense__control">
                             <label className="new-expense__control__title">Date</label>
-                            <input type="date" min="2021-1-1" max="2022-2-1" onChange={handleDateChange}></input>
+                            <input type="date" value={enterDate} min="2021-1-1" max="2022-2-1" onChange={handleDateChange}></input>
                         </div>
                     </div>
                     <div className="new-expense__btn">
