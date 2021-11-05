@@ -6,6 +6,16 @@ $screen-lg:                                         1200px;
 $screen-xl:                                         1400px;
 $screen-xxl:                                        1600px;
 
+$spacing: 25px;
+$colunms: 4;
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: calc(var(--spacing)*(-1));
+}
 .card-image{
     height: 200px;
     width: 100%;

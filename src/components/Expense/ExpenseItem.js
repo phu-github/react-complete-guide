@@ -8,7 +8,7 @@ import { CardContext } from '../../context/FakeCardData';
 
 
 const ExpenseItem = (props) => {
-    console.log("[2.2] ExpenseItem.js run");
+    // console.log("[2.2] ExpenseItem.js run");
     const {cardData} = useContext(CardContext);
     const [title, setTitle] = useState(props.title);
     

@@ -1,7 +1,7 @@
 import './ExpensesFilter.scss';
 
 export default function ExpensesFilter(props) {
-    console.log("[2.1] ExpensesFilter.js run");
+    // console.log("[2.1] ExpensesFilter.js run");
     const handleDropdownChange = (event) =>{
         console.log(event.target.value);
         props.onRecieveExpenseFilter(event.target.value);

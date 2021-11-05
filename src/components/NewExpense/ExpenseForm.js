@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import { useState } from 'react/cjs/react.development';
 
 const ExpenseForm = (props) => {
-    console.log("[1.1] NewExpense.js run");
+    // console.log("[1.1] NewExpense.js run");
     const style = { background: '#0092ff', padding: '8px 0' };
     const [enterTitle, setEnterTitle] = useState('');
     const [enterAmount, setEnterAmount] = useState('');
@@ -80,7 +80,7 @@ const ExpenseForm = (props) => {
                         </div>
                         <div className="new-expense__control">
                             <label className="new-expense__control__title">Date</label>
-                            <input type="date" value={enterDate} min="2021-1-1" max="2022-2-1" onChange={handleDateChange}></input>
+                            <input type="date" value={enterDate} min="2020-1-1" max="2022-2-1" onChange={handleDateChange}></input>
                         </div>
                     </div>
                     <div className="new-expense__btn">
