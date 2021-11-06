@@ -1,5 +1,6 @@
 import { useState } from 'react/cjs/react.development';
 import './Expenses.scss';
+import ExpensesChart from './ExpensesChart';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
 const Expenses = (props) => {
@@ -20,6 +21,7 @@ const Expenses = (props) => {
                 onRecieveExpenseFilter={RecieveExpenseFilter}>  
             </ExpensesFilter>
             <ExpensesList items = {fiteredExpenses} />
+            <ExpensesChart></ExpensesChart>
         </>
     );
 };

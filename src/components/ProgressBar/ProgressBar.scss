@@ -1,0 +1,25 @@
+$progressBar-width: 300px;
+$progressBar-percent : 100px;   // So với witdth: 200px --> ProgressBar chiếm 50%
+
+// Link tham khảo: https://www.youtube.com/watch?v=U-4tg5snUuw
+.progress{
+    background: #d8d8d8;
+    border-radius: 20px;
+    width: $progressBar-width;
+    height: 30px;
+    .progress__done{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFF;
+        background: linear-gradient( to bottom , #F2709C, #ff9472);
+        box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
+        border-radius: 20px;
+        width: $progressBar-percent;
+        height: 30px;
+        @if($progressBar-percent == 0px or $progressBar-percent == 0){
+            opacity: 0;
+        }
+        transition: 1s ease;
+    }
+}

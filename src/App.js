@@ -28,7 +28,6 @@ const App = () =>{
       <FakeCardData>
           <NewExpense onReciveExpense={ReciveExpense}></NewExpense>
           <Expenses items={expenses}></Expenses>
-          <Chart></Chart>
       </FakeCardData>
     </div>
   );
