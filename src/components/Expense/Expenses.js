@@ -21,7 +21,7 @@ const Expenses = (props) => {
                 onRecieveExpenseFilter={RecieveExpenseFilter}>  
             </ExpensesFilter>
             <ExpensesList items = {fiteredExpenses} />
-            <ExpensesChart></ExpensesChart>
+            <ExpensesChart expenses={fiteredExpenses}></ExpensesChart>
         </>
     );
 };

@@ -6,11 +6,17 @@ import NewExpense from './components/NewExpense/NewExpense';
 import Chart from './components/Chart/Chart';
 
 const DUMMY_EXPENSES = [
-  { id: 'e1', title:'ALIBABA [2020]', amount: 94.12, date: new Date(2020, 7, 14) },
-  { id: 'e2', title:'AMAZON [2020]', amount: 94.12, date: new Date(2020, 7, 15) },
-  { id: 'e3', title:'TIKI [2021]', amount: 94.12, date: new Date(2021, 9, 2)},
-  { id: 'e4', title:'LAZADA [2021]', amount: 94.12, date: new Date(2021, 9, 2)},
-  { id: 'e5', title:'SHOPPE [2022]', amount: 94.12, date: new Date(2022, 9, 2)},
+  { id: 'e1', title:'ALIBABA [2020]', amount: 0.01, date: new Date(2020, 1, 14) },
+  { id: 'e2', title:'AMAZON [2020]', amount: 0.01, date: new Date(2020, 1, 15) },
+  { id: 'e3', title:'ALIBABA [2020]', amount: 0.01, date: new Date(2020, 1, 14) },
+  { id: 'e4', title:'AMAZON [2020]', amount: 0.01, date: new Date(2020, 2, 15) },
+  { id: 'e5', title:'ALIBABA [2020]', amount: 0.01, date: new Date(2020, 3, 14) },
+  { id: 'e6', title:'AMAZON [2020]', amount: 0.01, date: new Date(2020, 4, 15) },
+  { id: 'e7', title:'ALIBABA [2020]', amount: 0.01, date: new Date(2020, 11, 14) },
+  { id: 'e8', title:'AMAZON [2020]', amount: 0.01, date: new Date(2020, 11, 15) },
+  { id: 'e9', title:'TIKI [2021]', amount:0.01, date: new Date(2021, 1, 2)},
+  { id: 'e10', title:'LAZADA [2021]', amount: 0.01, date: new Date(2021, 2, 2)},
+  { id: 'e11', title:'SHOPPE [2022]', amount: 0.01, date: new Date(2022, 2, 2)},
 ]
 
 const App = () =>{

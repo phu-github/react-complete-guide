@@ -1,28 +1,34 @@
 $chart-height: 300px;
 $chart-percent : 100px; 
-
-.chart-progress{
-    width: 30px;
-    height: $chart-height;
-    background: #d8d8d8;
-    border-radius: 20px;
-    transform: rotate(180deg);
-    .chart-progress__done{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #FFF;
-        background: linear-gradient( to bottom , #F2709C, #ff9472);
-        box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
-        border-radius: 20px;
-        height: $chart-percent;
+.chart__list__chartbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: 20px;
+    .chartbar__progress{
         width: 30px;
-        @if($chart-percent == 0px or $chart-percent == 0){
-            opacity: 0;
+        height: $chart-height;
+        background: #d8d8d8;
+        border-radius: 20px;
+        transform: rotate(180deg);
+        .chartbar__progress__done{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFF;
+            background: linear-gradient( to bottom , #F2709C, #ff9472);
+            box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
+            border-radius: 20px;
+            height: $chart-percent;
+            width: 30px;
+            @if($chart-percent == 0px or $chart-percent == 0){
+                opacity: 0;
+            }
+            transition: 1s ease;
+            span{
+                transform: rotate(180deg);
+            }
         }
-        transition: 1s ease;
-        span{
-            transform: rotate(180deg);
-        }
-    }
+    }    
 }

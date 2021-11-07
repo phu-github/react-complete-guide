@@ -3,31 +3,31 @@ import './Chart.scss';
 import ChartBar  from './ChartBar';
 
 const Chart = (props) => {
-  // const [dataPoints, setDataPoints] = useState([]);
-  // setDataPoints(props.dataPoints);
-  // <ChartBar
-  //   key={1}
-  //   value={1}
-  //   maxValue={1}
-  //   label={1}
-  // />
+  console.log("============",props.dataPoints);
+  const dataPointValue = props.dataPoints.map(dataPoint => dataPoint.value);
+  console.log("dataPointValue: " ,dataPointValue);
+  const totalMaximum = Math.max(...dataPointValue);
+  console.log("totalMaximum:", totalMaximum);
+
     return (
-      <>
-         <ChartBar
-            key={1}
-            value={1}
-            maxValue={1}
-            label={1}
-          />
-      </>
+
+      <div className="chart">
+        <div className ="chart__list">
+          {
+            props.dataPoints.map(dataPoint => (
+              <ChartBar
+                key={dataPoint.label}
+                value={dataPoint.value}
+                maxValue={null}
+                label={dataPoint.label}
+              />
+            ))
+          }
+        </div>
+      </div>
     );
 }
 
 export default Chart;
 
 
-{/* {
-          props.dataPoints.map(expense => (
-              <p>lalal</p>
-          ))
-        }   */}

@@ -16,10 +16,15 @@ function ExpensesChart(props) {
         { label: "Nov", value:'0'},
         { label: "Dec", value:'0'},
     ];
-    let arrayName = [];
-    console.log('#####', arrayName);
+    // console.log("================props.expenses" ,props.expenses);
+    for(const expense of props.expenses){
+        const expenseMonth =  expense.date.getMonth();
+        chartDataPoints[expenseMonth].value += expense.amount;
+        console.log("================ expenseMonth:" ,expenseMonth);
+    }
+    const arrayName = [1 , 2 ,3,4,5,6,7,8,9,10,11,12];
     return (
-       <Chart dataPoints = {arrayName} ></Chart>
+       <Chart dataPoints = {chartDataPoints} ></Chart>
     );
 }
 

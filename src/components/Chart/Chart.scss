@@ -1,0 +1,9 @@
+$spacing: 30px;
+$colunm: 4;
+.chart__list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    margin-left: -$spacing;
+}

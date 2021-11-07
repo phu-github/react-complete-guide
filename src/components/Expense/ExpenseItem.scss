@@ -11,7 +11,7 @@ $colunms: 4;
 
 .cards{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: calc(var(--spacing)*(-1));
