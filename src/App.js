@@ -23,10 +23,7 @@ const App = () =>{
 
   return (
     <div className="App">
-      <FakeCardData>
-          <NewExpense onReciveExpense={ReciveExpense}></NewExpense>
-          <Expenses items={expenses}></Expenses>
-      </FakeCardData>
+        ON BRANCH LESSON 8
     </div>
   );
 }
