@@ -6,40 +6,37 @@ import ErrorModal from '../UI/ErrorModal';
 import Wrapper from '../Helpers/Wrapper';
 
 function AddUser(props) {
-	const[enteredUsername, setEnteredUsername] = useState('');
-	const[enteredAge, setEnteredAge] = useState('');
+	const nameInputRef = useRef();
+	const ageInputRef = useRef();	
 	const[error, setError] = useState();
 
 	// sumit form (get value + reset input)
 	const addUserHandle = (event) => {
 		event.preventDefault();
+		console.log(nameInputRef);
+		const enterNameInputRef = nameInputRef.current.value;
+		const enterAgeInputRef = ageInputRef.current.value;
 		// check validate
-		if(enteredUsername.trim().length === 0 || enteredAge.trim().length === 0 ){
+		if(enterNameInputRef.trim().length === 0 || enterAgeInputRef.trim().length === 0 ){
 			setError({
 				title: "Invalid input",
 				message: "Please enter a valid age (none empty value)."
 			});
 			return;
 		}
-		if(+enteredAge < 1){
+		if(+enterAgeInputRef < 1){
 			setError({
 				title: "Invalid age",
 				message: "Please enter a valid name and age ( > 0)."
 			});
 			return;
 		}
-		console.log(enteredUsername, enteredAge)
-		props.onAddUser(enteredUsername, enteredAge);
-		setEnteredUsername('');
-		setEnteredAge('');
+		console.log(enterNameInputRef, enterAgeInputRef)
+		props.onAddUser(enterNameInputRef, enterAgeInputRef);
+		nameInputRef.current.value = '';
+		ageInputRef.current.value = '';
 	}
 
-	const usernameChangeHandler = (e) =>{
-		setEnteredUsername(e.target.value)
-	}
-	const ageChangeHandler = (e) =>{
-		setEnteredAge(e.target.value)
-	}
 	const handleHideModal = () =>{
 		console.log("dddddddddddddđhide")
 		setError(null);
@@ -60,16 +57,14 @@ function AddUser(props) {
 					<input
 						id='username'
 						type="text"
-						value={enteredUsername}
-						onChange={usernameChangeHandler}
+						ref = {nameInputRef}
 					>
 					</input>
 					<label htmlFor="age">Age (Years)</label>
 					<input
 						id='age'
 						type="number"
-						value={enteredAge}
-						onChange={ageChangeHandler}
+						ref = {ageInputRef}
 					>
 					</input>
 					<Button type="submit">Add User</Button>
