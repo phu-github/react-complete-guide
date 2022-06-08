@@ -16,18 +16,11 @@ const App = () =>{
 			];
 		})
 	}
-	const numbers = [1, 2, 3]; 
 	return (
 		<Fragment>
 			<Portals>Đây là portals 1</Portals>
 			<AddUser onAddUser = {addUserHandler}></AddUser>
 			<UserList users = {userList} ></UserList>
-			{numbers.map((number) =>
-				<>
-					<div>test</div> 
-					<Portals>Đây là portals 2</Portals>
-				</>	
-			)}
 		</Fragment>
 	);
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import Button from '../UI/Button';
 import Card from '../UI/Card';
 import classes from './AddUser.module.css';
@@ -41,6 +41,7 @@ function AddUser(props) {
 		setEnteredAge(e.target.value)
 	}
 	const handleHideModal = () =>{
+		console.log("dddddddddddddđhide")
 		setError(null);
 	}
 	
@@ -50,7 +51,7 @@ function AddUser(props) {
 				<ErrorModal 
 					title = {error.title} 
 					message= {error.message} 
-					onConfirm={handleHideModal}
+					onConfirm = {handleHideModal}	
 				/>
 			)}
 			<Card className={classes.input}>
@@ -60,14 +61,17 @@ function AddUser(props) {
 						id='username'
 						type="text"
 						value={enteredUsername}
-						onChange={usernameChangeHandler}></input>
+						onChange={usernameChangeHandler}
+					>
+					</input>
 					<label htmlFor="age">Age (Years)</label>
 					<input
 						id='age'
 						type="number"
 						value={enteredAge}
-						onChange={ageChangeHandler}></input>
-					{/* <button type='submit'>Add User</button> */}
+						onChange={ageChangeHandler}
+					>
+					</input>
 					<Button type="submit">Add User</Button>
 				</form>
 			</Card>
