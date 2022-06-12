@@ -17,11 +17,26 @@ const App = () =>{
 		})
 	}
 	return (
-		<Fragment>
-			<Portals>Đây là portals 1</Portals>
-			<AddUser onAddUser = {addUserHandler}></AddUser>
-			<UserList users = {userList} ></UserList>
-		</Fragment>
+      //1. Wrapping element: using "div"
+      <div>
+        <Portals>Đây là portals 1</Portals>
+		    <AddUser onAddUser = {addUserHandler}></AddUser>
+		    <UserList users = {userList} ></UserList>
+      </div>
+
+      // ====== 2. Wrapping element: USING "array" ==> must have unique key ========
+      // [
+      //  <Portals>Đây là portals 1</Portals>,
+		  // 	<AddUser onAddUser = {addUserHandler}></AddUser>,
+		  // 	<UserList users = {userList} ></UserList>
+      // ]
+
+      // ====== 3. Wrapping element: using Fragment ============
+      // <Fragment>
+		  // 	<Portals>Đây là portals 1</Portals>
+		  // 	<AddUser onAddUser = {addUserHandler}></AddUser>
+		  // 	<UserList users = {userList} ></UserList>
+		  // </Fragment>
 	);
 }
 
