@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import MainHeader from './components/MainHeader/MainHeader';
 import MountedUnmounted from './components/MountedUnmounted/MountedUnmounted';
 import UpDown from './components/Reducer/UpDown';
+import AuthenContext from './store/authen-context';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,18 +32,19 @@ function App() {
 
   return (
     <React.Fragment>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
-      <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
-      </main>
+      <AuthenContext.Provider value = {{isLoggedIn: isLoggedIn}}>
+          <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+          <main>
+            {!isLoggedIn && <Login onLogin={loginHandler} />}
+            {isLoggedIn && <Home onLogout={logoutHandler} />}
+          </main>
+      </AuthenContext.Provider>
       {/*========== useEffect?  */}
       <button type="button" onClick={() => setToggle(!toggle)}>button</button>
       {toggle && <MountedUnmounted></MountedUnmounted>}
 
       {/*========== useReducer? */}
       <UpDown></UpDown>
-      
     </React.Fragment>
   );
 }
