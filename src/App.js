@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
@@ -9,6 +9,10 @@ import AuthenContext from './store/authen-context';
 
 function App() {
   const ctx = useContext(AuthenContext);
+
+  const [toggle, setToggle] = useState(false);
+
+
   return (
     <React.Fragment>
           <MainHeader/>

@@ -60,7 +60,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(emailState.value, passState.value);
+    // props.onLogin(emailState.value, passState.value);
   };
   console.log("1. RUN BODY");
   return (
