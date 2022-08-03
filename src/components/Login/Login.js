@@ -1,8 +1,9 @@
-import React, { useState, useEffect,useReducer } from 'react';
+import React, { useState, useEffect,useReducer, useContext } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import AuthenContext from '../../store/authen-context';
 
 const emailReducer = (state, action) =>{
     switch (action.type){
@@ -57,10 +58,11 @@ const Login = (props) => {
   const validatePasswordHandler = () => {
     dispatchPass({type: "PASS_BLUR"})
   };
+  const AuthenCtx = useContext(AuthenContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(emailState.value, passState.value);
+    AuthenCtx.onLogin(emailState.value, passState.value);
   };
   console.log("1. RUN BODY");
   return (
