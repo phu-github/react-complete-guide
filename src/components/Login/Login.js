@@ -1,8 +1,9 @@
-import React, { useState, useEffect,useReducer } from 'react';
+import React, { useState, useEffect, useReducer, useContext } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import AuthenContext from '../../store/authen-context';
 
 const emailReducer = (state, action) =>{
     switch (action.type){
@@ -29,6 +30,9 @@ const Login = (props) => {
 
   const {isValid: emailIsValide} = emailState;
   const {isValid: passIsValide} = passState;
+
+  const authCtx = useContext(AuthenContext);
+
   // 3. Active button when email + password is valid
   useEffect(() => {
     console.log("3. RUN CALLBACK LOGIN")
@@ -60,7 +64,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    // props.onLogin(emailState.value, passState.value);
+    authCtx.onLogin(emailState.value, passState.value);
   };
   console.log("1. RUN BODY");
   return (
